@@ -12,6 +12,13 @@ body {
     align-items: center;
 }
 
+h1 {
+    font-family: "Comic Sans MS", sans-serif;
+    color: #e36b7f;
+    text-align: center;
+    margin-bottom: 17px;
+}
+
 .grid-container {
     border: 5px solid black;
     width: 400px;
