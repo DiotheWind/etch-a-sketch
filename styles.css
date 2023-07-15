@@ -14,7 +14,20 @@ body {
 
 .grid-container {
     border: 5px solid black;
-    width: 500px;
-    height: 500px;
+    width: 400px;
+    height: 350px;
     background-color: #ffffff;
+    display: flex;
+    flex-direction: column;
 }
+
+.row {
+    flex: 1;
+    display: flex;
+}
+
+.cell {
+    border: 1px solid gray;
+    flex: 1;
+}
+
