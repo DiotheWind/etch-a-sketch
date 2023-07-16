@@ -40,7 +40,7 @@ h1 {
     flex: 1;
 }
 
-.cell-change-color {
+.cell-change-color {         /* Changes the cell color when a specific cell is selected*/
     background-color: gray;
 }
 
