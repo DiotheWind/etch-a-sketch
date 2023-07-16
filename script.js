@@ -2,27 +2,26 @@ const gridContainer = document.querySelector("#grid-container");
 const changeGridSize = document.querySelector("#change-grid-size");
 const clearGridBtn = document.querySelector("#clear-grid");
 
-let gridSize = 16;
-
-generateGrid();
+let gridSizeValue = 16;
+generateGrid(gridSizeValue);
 
 changeGridSize.addEventListener("click", () => {
-    gridContainer.innerHTML = "";
-    const gridSizeValue = prompt("Enter grid size between 10 and 64");
-    if (gridSizeValue >= 10 && gridSizeValue <= 64) {
-        gridSize = gridSizeValue;
+    const gridSizeValuePrompt = prompt("Enter grid size between 10 and 64");
+    if (gridSizeValuePrompt >= 10 && gridSizeValuePrompt <= 64) {
+        gridSizeValue = gridSizeValuePrompt;
+        clearGrid();
+        generateGrid(gridSizeValue);
     } else {
         alert("Invalid grid size.")
     }
-    generateGrid();
 });
 
 clearGridBtn.addEventListener("click", () => {
-    gridContainer.innerHTML = "";
-    generateGrid();
+    clearGrid();
+    generateGrid(gridSizeValue);
 });
 
-function generateGrid(){
+function generateGrid(gridSize) {
     for (let i = 1; i <= gridSize; i++) {
         const row = document.createElement("div");
         row.className = "row";
@@ -36,4 +35,6 @@ function generateGrid(){
         gridContainer.appendChild(row);
     }
 }
+
+function clearGrid() {gridContainer.innerHTML = "";}
 
