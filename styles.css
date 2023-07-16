@@ -10,6 +10,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
 }
 
 h1 {
@@ -55,4 +56,13 @@ button {
 
 #change-grid-size {
     margin-right: 7px;
+}
+
+.footer {
+    margin-top: 31px;
+    font-family: "Comic Sans MS", sans-serif;  
+}
+
+.footer a {
+    color: #e36b7f;
 }
