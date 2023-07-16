@@ -38,3 +38,7 @@ h1 {
     flex: 1;
 }
 
+.cell-change-color {
+    background-color: gray;
+}
+
