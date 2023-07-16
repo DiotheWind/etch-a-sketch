@@ -3,7 +3,11 @@ const changeGridSize = document.querySelector("#change-grid-size");
 const clearGridBtn = document.querySelector("#clear-grid");
 
 let gridSizeValue = 16;
+let toDraw;
+
 generateGrid(gridSizeValue);
+gridContainer.onmousedown = () => toDraw = true;
+gridContainer.onmouseup = () => toDraw = false;
 
 changeGridSize.addEventListener("click", () => {
     const gridSizeValuePrompt = prompt("Enter grid size between 10 and 64");
@@ -28,8 +32,12 @@ function generateGrid(gridSize) {
         for (let j = 1; j <= gridSize; j++) {
             const cell = document.createElement("div");
             cell.className = "cell";
-            cell.setAttribute("id", "cell")
-            cell.addEventListener("mouseover", () => cell.classList.add("cell-change-color"))
+            cell.setAttribute("id", "cell");
+            cell.addEventListener("mouseenter", () => {
+                if (toDraw) {
+                    cell.classList.add("cell-change-color");
+                }
+            });
             row.appendChild(cell);
         }
         gridContainer.appendChild(row);
@@ -37,4 +45,6 @@ function generateGrid(gridSize) {
 }
 
 function clearGrid() {gridContainer.innerHTML = "";}
+
+
 
