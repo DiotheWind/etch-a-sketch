@@ -16,12 +16,13 @@ h1 {
     font-family: "Comic Sans MS", sans-serif;
     color: #e36b7f;
     text-align: center;
+    font-size: 40px;
 }
 
 .grid-container {
     border: 5px solid black;
-    width: 400px;
-    height: 350px;
+    width: 470px;
+    height: 400px;
     background-color: #ffffff;
     display: flex;
     flex-direction: column;
@@ -49,4 +50,9 @@ button {
     border: none;
     color: #ffffff;
     font-family: "Comic Sans MS", sans-serif;
+    font-size: 15px;
+}
+
+#change-grid-size {
+    margin-right: 7px;
 }
