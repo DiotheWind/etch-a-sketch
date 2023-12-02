@@ -16,6 +16,8 @@ color = "#808080";
 toErase = false; 
 
 generateGrid(gridSizeValue);
+changeCursor("paint");
+
 gridContainer.onmousedown = () => toDraw = true; // The user can shade the cell if
 gridContainer.onmouseup = () => toDraw = false;  // the mouse was on hold click inside that specific cell
 
@@ -30,9 +32,11 @@ eraseBtn.addEventListener("click", () => {
     if (toErase) {
         toErase = false;
         eraseBtn.style.border = "none";
+        changeCursor("paint");
     } else {
         toErase = true
         eraseBtn.style.border = "3px solid black";
+        changeCursor("erase");
     }
 });
 
@@ -67,6 +71,14 @@ function generateGrid(gridSize) {
             row.appendChild(cell);
         }
         gridContainer.appendChild(row);
+    }
+}
+
+function changeCursor(type) {
+    if (type === "paint") {
+        gridContainer.style.cursor = "url('./Cursors/paint.cur'), auto";
+    } else if (type === "erase") {
+        gridContainer.style.cursor = "url('./Cursors/eraser.cur'), auto";
     }
 }
 
