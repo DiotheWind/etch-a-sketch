@@ -64,7 +64,7 @@ function generateGrid(gridSize) {
             cell.className = "cell";
             cell.addEventListener("mouseenter", () => {
                 if (toDraw) {
-                    toErase == true ? cell.style.backgroundColor = "#FFFFFF" : cell.style.backgroundColor = color;  // The cell changes color or delete color 
+                    toErase ? cell.style.backgroundColor = "#FFFFFF" : cell.style.backgroundColor = color;  // The cell changes color or delete color 
                                                                                                                     //  if the ToDraw flag variable is set to True
                 }
             });
