@@ -41,13 +41,23 @@ h1 {
 }
 
 .cell {
-    /* border: 1px solid gray; */
     flex: 1;
 }
 
-/* .cell-change-color {        
-    background-color: #808080;
-} */
+.menu-container,
+.slider-containter,
+.btn-container {
+    display: flex;
+}
+
+.menu-container {
+    justify-content: space-between;
+    align-items: center;
+}
+
+.btn-container {
+    gap: 10px;
+}
 
 button {
     background-color: #e36b7f;
@@ -64,15 +74,12 @@ button:hover {
     background-color: #e0526a;
 }
 
-/* #change-grid-size {
-    margin-right: 7px;
-} */
 #slider {
     -webkit-appearance: none;
     appearance: none;
     background: transparent;
     cursor: pointer;
-    width: 15rem;
+    width: 12rem;
 }
 
 #slider::-webkit-slider-runnable-track {
@@ -87,7 +94,23 @@ button:hover {
     height: 15px;
     width: 16px;
     border-radius: 100%;
-    margin-top: -3px;
+    margin-top: -4px;
+}
+
+#color-picker {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    width: 50px;
+    height: 50px;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+  }
+
+#color-picker::-webkit-color-swatch {
+    border-radius: 15px;
+    border: none;
 }
 
 .footer {

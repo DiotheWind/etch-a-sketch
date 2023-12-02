@@ -7,9 +7,10 @@ const clearGridBtn = document.querySelector("#clear-grid");
 
 let gridSizeValue; 
 let color;
-let toDraw;  // Flag variable for the hold click
-let toErase;
+let toDraw;  
+let toErase;  
 
+// Default Values
 gridSizeValue = 32;
 color = "#808080";
 toErase = false; 
@@ -17,7 +18,6 @@ toErase = false;
 generateGrid(gridSizeValue);
 gridContainer.onmousedown = () => toDraw = true; // The user can shade the cell if
 gridContainer.onmouseup = () => toDraw = false;  // the mouse was on hold click inside that specific cell
-
 
 slider.addEventListener("input", () => {
     gridSizeValue = slider.value;
@@ -27,7 +27,14 @@ slider.addEventListener("input", () => {
 });
 
 eraseBtn.addEventListener("click", () => {
-    toErase ? toErase = false : toErase = true;
+    // toErase ? toErase = false : toErase = true;
+    if (toErase) {
+        toErase = false;
+        eraseBtn.style.border = "none";
+    } else {
+        toErase = true
+        eraseBtn.style.border = "3px solid black";
+    }
 });
 
 colorBtn.addEventListener("input", () => {
@@ -55,7 +62,8 @@ function generateGrid(gridSize) {
             cell.setAttribute("id", "cell");
             cell.addEventListener("mouseenter", () => {
                 if (toDraw) {
-                    toErase == true ? cell.style.backgroundColor = "#FFFFFF" : cell.style.backgroundColor = color;  // The cell changes color if the ToDraw flag variable is set to True
+                    toErase == true ? cell.style.backgroundColor = "#FFFFFF" : cell.style.backgroundColor = color;  // The cell changes color or delete color 
+                                                                                                                    //  if the ToDraw flag variable is set to True
                 }
             });
             row.appendChild(cell);
