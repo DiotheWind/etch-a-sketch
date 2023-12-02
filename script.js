@@ -64,8 +64,7 @@ function generateGrid(gridSize) {
             cell.className = "cell";
             cell.addEventListener("mouseenter", () => {
                 if (toDraw) {
-                    toErase ? cell.style.backgroundColor = "#FFFFFF" : cell.style.backgroundColor = color;  // The cell changes color or delete color 
-                                                                                                                    //  if the ToDraw flag variable is set to True
+                    toErase ? cell.style.backgroundColor = "#FFFFFF" : cell.style.backgroundColor = color;  // The cell changes color or delete color if the mousedown while inside cell div
                 }
             });
             row.appendChild(cell);
