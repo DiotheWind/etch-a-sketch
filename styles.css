@@ -51,10 +51,38 @@ button {
     border: none;
     color: #ffffff;
     font-size: 15px;
+    cursor: pointer;
 }
 
-#change-grid-size {
+button:hover {
+    background-color: #e0526a;
+}
+
+/* #change-grid-size {
     margin-right: 7px;
+} */
+#slider {
+    -webkit-appearance: none;
+    appearance: none;
+    background: transparent;
+    cursor: pointer;
+    width: 15rem;
+    margin-right: 137px;
+}
+
+#slider::-webkit-slider-runnable-track {
+    background-color: #e36b7f;
+    height: 0.5rem;
+    border-radius: 2px;
+}
+
+#slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    background-color: white;
+    height: 15px;
+    width: 16px;
+    border-radius: 100%;
+    margin-top: -3px;
 }
 
 .footer {

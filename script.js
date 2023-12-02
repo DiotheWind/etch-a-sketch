@@ -1,5 +1,6 @@
 const gridContainer = document.querySelector("#grid-container");
-const changeGridSize = document.querySelector("#change-grid-size");
+// const changeGridSize = document.querySelector("#change-grid-size");
+const slider = document.querySelector("#slider")
 const clearGridBtn = document.querySelector("#clear-grid");
 
 let gridSizeValue = 16; 
@@ -9,16 +10,21 @@ generateGrid(gridSizeValue);
 gridContainer.onmousedown = () => toDraw = true; // The user can shade the cell if
 gridContainer.onmouseup = () => toDraw = false;  // the mouse was on hold click inside that specific cell
 
-changeGridSize.addEventListener("click", () => {
-    const gridSizeValuePrompt = prompt("Enter grid size between 10 and 64");
-    if (gridSizeValuePrompt >= 10 && gridSizeValuePrompt <= 64) {
-        gridSizeValue = gridSizeValuePrompt;
-        clearGrid();
-        generateGrid(gridSizeValue);
-    } else {
-        alert("Invalid grid size.");
-    }
-});
+// changeGridSize.addEventListener("click", () => {
+//     const gridSizeValuePrompt = prompt("Enter grid size between 10 and 64");
+//     if (gridSizeValuePrompt >= 10 && gridSizeValuePrompt <= 64) {
+//         gridSizeValue = gridSizeValuePrompt;
+//         clearGrid();
+//         generateGrid(gridSizeValue);
+//     } else {
+//         alert("Invalid grid size.");
+//     }
+// });
+slider.addEventListener("input", () => {
+    gridSizeValue = slider.value;
+    clearGrid();
+    generateGrid(gridSizeValue);
+})
 
 clearGridBtn.addEventListener("click", () => {
     clearGrid();
