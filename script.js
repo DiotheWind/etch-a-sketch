@@ -27,7 +27,6 @@ slider.addEventListener("input", () => {
 });
 
 eraseBtn.addEventListener("click", () => {
-    // toErase ? toErase = false : toErase = true;
     if (toErase) {
         toErase = false;
         eraseBtn.style.border = "none";
