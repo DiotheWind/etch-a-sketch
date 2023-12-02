@@ -58,7 +58,6 @@ function generateGrid(gridSize) {
         for (let j = 1; j <= gridSize; j++) {  // Generates cells to be stored inside the row container
             const cell = document.createElement("div");
             cell.className = "cell";
-            cell.setAttribute("id", "cell");
             cell.addEventListener("mouseenter", () => {
                 if (toDraw) {
                     toErase == true ? cell.style.backgroundColor = "#FFFFFF" : cell.style.backgroundColor = color;  // The cell changes color or delete color 
