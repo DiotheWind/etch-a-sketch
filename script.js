@@ -24,7 +24,7 @@ slider.addEventListener("input", () => {
     gridSizeValue = slider.value;
     clearGrid();
     generateGrid(gridSizeValue);
-})
+});
 
 clearGridBtn.addEventListener("click", () => {
     clearGrid();
