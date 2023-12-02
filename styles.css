@@ -1,3 +1,10 @@
+:root {
+    --red: #e36b7f;
+    --secondary-red: #e0526a;
+    --white: #ffffff;
+    --cyan: #00FFFF;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -6,7 +13,7 @@
 }
 
 body {
-    background-color: #00FFFF;
+    background-color: var(--cyan);
     min-height: 100vh;
     display: flex;
     justify-content: center;
@@ -15,7 +22,7 @@ body {
 }
 
 h1 {
-    color: #e36b7f;
+    color: var(--red);
     text-align: center;
     font-size: 40px;
 }
@@ -29,7 +36,7 @@ h1 {
     border: 5px solid black;
     width: 470px;
     height: 400px;
-    background-color: #ffffff;
+    background-color: var(--white);
     display: flex;
     flex-direction: column;
     margin: 5px 0;
@@ -60,18 +67,18 @@ h1 {
 }
 
 button {
-    background-color: #e36b7f;
+    background-color: var(--red);
     padding: 12px 9px;
     border-radius: 10px;
     border: none;
-    color: #ffffff;
+    color: var(--white);
     font-size: 15px;
     cursor: pointer;
     width: 100px;
 }
 
 button:hover {
-    background-color: #e0526a;
+    background-color: var(--secondary-red);
 }
 
 #slider {
@@ -83,14 +90,18 @@ button:hover {
 }
 
 #slider::-webkit-slider-runnable-track {
-    background-color: #e36b7f;
+    background-color: var(--red);
     height: 0.5rem;
     border-radius: 2px;
 }
 
+#slider::-webkit-slider-runnable-track:hover {
+    background-color: var(--secondary-red);
+}
+
 #slider::-webkit-slider-thumb {
     -webkit-appearance: none;
-    background-color: white;
+    background-color: var(--white);
     height: 15px;
     width: 16px;
     border-radius: 100%;
@@ -99,7 +110,6 @@ button:hover {
 
 #color-picker {
     -webkit-appearance: none;
-    -moz-appearance: none;
     appearance: none;
     width: 50px;
     height: 50px;
@@ -109,8 +119,12 @@ button:hover {
   }
 
 #color-picker::-webkit-color-swatch {
-    border-radius: 15px;
+    border-radius: 50%;
     border: none;
+}
+
+#color-picker::-webkit-color-swatch:hover {
+    border: 2px solid black;
 }
 
 .footer {
@@ -118,5 +132,5 @@ button:hover {
 }
 
 .footer a {
-    color: #e36b7f;
+    color: var(--red);
 }
