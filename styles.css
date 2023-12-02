@@ -41,13 +41,13 @@ h1 {
 }
 
 .cell {
-    border: 1px solid gray;
+    /* border: 1px solid gray; */
     flex: 1;
 }
 
-.cell-change-color {         /* Changes the cell color when a specific cell is selected*/
-    background-color: gray;
-}
+/* .cell-change-color {        
+    background-color: #808080;
+} */
 
 button {
     background-color: #e36b7f;
@@ -57,6 +57,7 @@ button {
     color: #ffffff;
     font-size: 15px;
     cursor: pointer;
+    width: 100px;
 }
 
 button:hover {
@@ -72,7 +73,6 @@ button:hover {
     background: transparent;
     cursor: pointer;
     width: 15rem;
-    margin-right: 137px;
 }
 
 #slider::-webkit-slider-runnable-track {

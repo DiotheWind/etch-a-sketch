@@ -1,31 +1,37 @@
 const displayGridSize = document.querySelectorAll(".grid-size")
 const gridContainer = document.querySelector("#grid-container");
-// const changeGridSize = document.querySelector("#change-grid-size");
-const slider = document.querySelector("#slider")
+const slider = document.querySelector("#slider");
+const eraseBtn = document.querySelector("#eraser");
+const colorBtn = document.querySelector("#color-picker");
 const clearGridBtn = document.querySelector("#clear-grid");
 
-let gridSizeValue = 16; 
+let gridSizeValue; 
+let color;
 let toDraw;  // Flag variable for the hold click
+let toErase;
+
+gridSizeValue = 32;
+color = "#808080";
+toErase = false; 
 
 generateGrid(gridSizeValue);
 gridContainer.onmousedown = () => toDraw = true; // The user can shade the cell if
 gridContainer.onmouseup = () => toDraw = false;  // the mouse was on hold click inside that specific cell
 
-// changeGridSize.addEventListener("click", () => {
-//     const gridSizeValuePrompt = prompt("Enter grid size between 10 and 64");
-//     if (gridSizeValuePrompt >= 10 && gridSizeValuePrompt <= 64) {
-//         gridSizeValue = gridSizeValuePrompt;
-//         clearGrid();
-//         generateGrid(gridSizeValue);
-//     } else {
-//         alert("Invalid grid size.");
-//     }
-// });
+
 slider.addEventListener("input", () => {
     gridSizeValue = slider.value;
     updateGridSizeText(slider.value);
     clearGrid();
     generateGrid(gridSizeValue);
+});
+
+eraseBtn.addEventListener("click", () => {
+    toErase ? toErase = false : toErase = true;
+});
+
+colorBtn.addEventListener("input", () => {
+    color = colorBtn.value;
 });
 
 clearGridBtn.addEventListener("click", () => {
@@ -49,7 +55,7 @@ function generateGrid(gridSize) {
             cell.setAttribute("id", "cell");
             cell.addEventListener("mouseenter", () => {
                 if (toDraw) {
-                    cell.classList.add("cell-change-color");  // The cell changes color if the ToDraw flag variable is set to True
+                    toErase == true ? cell.style.backgroundColor = "#FFFFFF" : cell.style.backgroundColor = color;  // The cell changes color if the ToDraw flag variable is set to True
                 }
             });
             row.appendChild(cell);
