@@ -20,6 +20,11 @@ h1 {
     font-size: 40px;
 }
 
+.display-grid-size {
+    text-align: end;
+    margin-top: 12px;
+}
+
 .grid-container {
     border: 5px solid black;
     width: 470px;
@@ -27,7 +32,7 @@ h1 {
     background-color: #ffffff;
     display: flex;
     flex-direction: column;
-    margin: 17px 0;
+    margin: 5px 0;
 }
 
 .row {

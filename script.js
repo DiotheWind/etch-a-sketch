@@ -1,3 +1,4 @@
+const displayGridSize = document.querySelectorAll(".grid-size")
 const gridContainer = document.querySelector("#grid-container");
 // const changeGridSize = document.querySelector("#change-grid-size");
 const slider = document.querySelector("#slider")
@@ -22,6 +23,7 @@ gridContainer.onmouseup = () => toDraw = false;  // the mouse was on hold click 
 // });
 slider.addEventListener("input", () => {
     gridSizeValue = slider.value;
+    updateGridSizeText(slider.value);
     clearGrid();
     generateGrid(gridSizeValue);
 });
@@ -30,6 +32,12 @@ clearGridBtn.addEventListener("click", () => {
     clearGrid();
     generateGrid(gridSizeValue);
 });
+
+function updateGridSizeText(value) {
+    for (const text of displayGridSize) {
+        text.textContent = value;
+    }
+}
 
 function generateGrid(gridSize) {
     for (let i = 1; i <= gridSize; i++) {  // Generate rows of container for the cell
