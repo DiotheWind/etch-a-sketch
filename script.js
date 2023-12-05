@@ -18,8 +18,8 @@ toErase = false;
 generateGrid(gridSizeValue);
 changeCursor("paint");
 
-gridContainer.onmousedown = () => toDraw = true; // The user can shade the cell if
-gridContainer.onmouseup = () => toDraw = false;  // the mouse was on hold click inside that specific cell
+document.body.onmousedown = () => toDraw = true; // The user can shade the cell if
+document.body.onmouseup = () => toDraw = false;  // the mouse was on hold click inside that specific cell
 
 slider.addEventListener("input", () => {
     gridSizeValue = slider.value;
