@@ -1,21 +1,23 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredoka&display=swap');
+
 :root {
-    --red: #e36b7f;
-    --secondary-red: #e0526a;
+    --main-color: #e36b7f;
+    --secondary-color: #e0526a;
     --white: #ffffff;
-    --cyan: #00FFFF;
+    --bg-color: #f5deb3;
 }
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: "Comic Sans MS", sans-serif;
+    font-family: 'Fredoka', sans-serif;
     user-select: none;
     -moz-user-select: none;
 }
 
 body {
-    background-color: var(--cyan);
+    background-color: var(--bg-color);
     min-height: 100vh;
     display: flex;
     justify-content: center;
@@ -24,7 +26,7 @@ body {
 }
 
 h1 {
-    color: var(--red);
+    color: var(--main-color);
     text-align: center;
     font-size: 40px;
 }
@@ -69,7 +71,7 @@ h1 {
 }
 
 button {
-    background-color: var(--red);
+    background-color: var(--main-color);
     padding: 12px 9px;
     border-radius: 10px;
     border: none;
@@ -80,7 +82,7 @@ button {
 }
 
 button:hover {
-    background-color: var(--secondary-red);
+    background-color: var(--secondary-color);
 }
 
 #slider {
@@ -92,22 +94,26 @@ button:hover {
 }
 
 #slider::-webkit-slider-runnable-track {
-    background-color: var(--red);
+    background-color: var(--main-color);
     height: 0.5rem;
     border-radius: 2px;
 }
 
-#slider::-webkit-slider-runnable-track:hover {
-    background-color: var(--secondary-red);
-}
+/* #slider::-webkit-slider-runnable-track:hover {
+    background-color: var(--secondary-color);
+} */
 
 #slider::-webkit-slider-thumb {
     -webkit-appearance: none;
-    background-color: var(--white);
+    background-color: var(--main-color);
     height: 15px;
     width: 16px;
     border-radius: 100%;
     margin-top: -4px;
+}
+
+#slider::-webkit-slider-thumb:active {
+    background-color: var(--secondary-color);
 }
 
 #color-picker {
@@ -134,7 +140,7 @@ button:hover {
 }
 
 .footer a {
-    color: var(--red);
+    color: var(--main-color);
     text-decoration: none;
 }
 
