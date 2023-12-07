@@ -99,10 +99,6 @@ button:hover {
     border-radius: 2px;
 }
 
-/* #slider::-webkit-slider-runnable-track:hover {
-    background-color: var(--secondary-color);
-} */
-
 #slider::-webkit-slider-thumb {
     -webkit-appearance: none;
     background-color: var(--main-color);
